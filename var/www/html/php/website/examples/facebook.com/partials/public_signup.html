@@ -1,0 +1,32 @@
+
+    <form id="signup__form" action="/php/website/examples/facebook.com/?sign_up" method="post">
+        <?php echo php_template('templates/partials/alerting.html'); ?>
+        <h2>Create an account</h2>
+        <div class="form-row">
+            <label for="input__username">Username</label>
+            <input id="input__username" name="input__username" type="text" placeholder="Enter a username">
+        </div>
+        <div class="form-row">
+            <label for="input__email">Email address</label>
+            <input id="input__email" name="input__email" type="email" placeholder="Enter your email address">
+        </div>
+        <div class="form-row">
+            <label for="input__password">Password</label>
+            <input id="input__password" name="input__password" class="input-wider"
+                   type="password" placeholder="Enter a password">
+        </div>
+        <div class="form-row">
+            <label for="input__confirm">Confirm Password</label>
+            <input id="input__confirm" name="input__confirm" class="input-wider"
+                   type="password" placeholder="Repeat password">
+        </div>
+        <div class="form-row">
+            <button type="submit">Create account</button>
+        </div>
+        <div class="form-row">
+            <p class="small-text">
+                Registrations to this platform remain subject to the terms of service and privacy policy linked
+                to in our footer, please do your best to read both document at least once.
+            </p>
+        </div>
+    </form>

@@ -1,0 +1,30 @@
+
+
+    <form method="post" action="/php/website/examples/facebook.com/?arbitrary_posting">
+        <textarea id="input__arbitrary" name="input__arbitrary"
+                  placeholder="What would you like to say?"
+                  ><?=isset($post['message_body']) ? $post['message_body'] : '';?></textarea>
+        <?php if(isset($post['id'])): ?>
+        <input type="hidden" name="post_id" value="<?=$post['id'];?>">
+        <?php endif; ?>
+        <button type="submit">Submit</button>
+    </form>
+
+    <?php foreach($_SESSION['user']['timeline'] as $post):?>
+    <article id="user_timeline__<?=$post['id'];?>" class="post">
+        <p>
+            <strong><?=$post['author_handle'];?></strong> posted
+            <?=nl2br(rtrim($post['message_body'], '.'));?>
+            <?=time_elapsed($post['published_time']);?>
+        </p>
+        <?php if($_SESSION['user'][0] === $post['author_id']): ?>
+        <p style="font-size: smaller; margin-top: 6px;">
+            <a href="/php/website/examples/facebook.com/?edit_post=<?=$post['id'];?>">Edit</a>
+            &nbsp;
+            <a href="/php/website/examples/facebook.com/?delete_post=<?=$post['id'];?>">
+                Delete
+            </a>
+        </p>
+        <?php endif; ?>
+    </article>
+    <?php endforeach; ?>

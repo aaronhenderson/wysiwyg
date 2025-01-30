@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /php/website/examples/facebook.com/
+
+DirectoryIndex application.php
+
+ErrorDocument 500 /php/website/examples/facebook.com/application.php?error_document=500
+ErrorDocument 404 /php/website/examples/facebook.com/application.php?error_document=404
+ErrorDocument 403 /php/website/examples/facebook.com/application.php?error_document=403
+
+RewriteRule ^terms-of-service$ application.php?terms_of_service [NC,QSA]
+RewriteRule ^privacy-statement$ application.php?privacy_statement [NC,QSA]
+RewriteRule ^(.*)/profile$ application.php?user_handle=$1 [NC,QSA]
