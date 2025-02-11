@@ -1,0 +1,6 @@
+
+#DirectoryIndex httpdocs/index.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ httpdocs/index.php?$1 [QSA,L]

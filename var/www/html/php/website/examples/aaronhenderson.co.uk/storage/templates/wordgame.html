@@ -1,0 +1,119 @@
+<style>
+    .table-responsive {
+        max-height: 280px;
+        margin-bottom: 16px;
+        overflow-y: auto;
+    }
+
+    p.text-muted {
+        font-size: 12px;
+    }
+
+    .base-string--letter {
+        width: 42px;
+        background-color: #ffc107;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24pt;
+        margin-right: 12px;
+        display: inline-block;
+        border-radius: 3px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .base-string--letter:hover,
+    .base-string--letter:focus{
+        background-color: #f3b807;
+    }
+
+    @media all and (min-height: 880px) {
+        .table-responsive {
+            max-height: none;
+            margin-bottom: auto;
+        }
+        p.text-muted {
+            font-size: 16px;
+        }
+    }
+</style>
+<div class="bg-bprimary p-4 shadow-lg"
+     id="wordgame"
+     style="display: block;">
+
+    <div class="container"
+         tabindex="-1"
+         role="dialog"
+         show="true"
+         style="display: block;">
+
+        <h2 class="text-center text-light py-4">
+            A Simple Word Game
+        </h2>
+
+        <div class="bg-light">
+            <a href="/"
+               class="close mt-2 mr-3"
+               data-dismiss="modal"
+               aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+
+
+            <form class=""
+                  method="post"
+                  action="?wordgame=yes&base_string=<!-- base_string -->#wordgame">
+
+                <div class="row py-3">
+                    <div class="col-md-6 py-md-4 text-center">
+                        <h2 class="py-md-4">
+                            <!-- formatted_base_string -->
+                        </h2>
+
+                        <p class="text-muted text-left">
+                            You must try make a word from the characters above using each character only once.
+                            The longer the word, the higher the score.
+                        </p>
+
+                        <!-- game_alert -->
+
+                        <div class="form-group mt-md-4">
+
+                            <label class="sr-only">
+                                Enter word to submit
+                            </label>
+                            <input type="text"
+                                   autocomplete="off"
+                                   name="inputWord"
+                                   id="inputWord"
+                                   class="form-control"
+                                   autofocus="autofocus"
+                                   placeholder="Enter your word submission">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-left text-lg-right mt-md-4">
+                                <button type="submit"
+                                        class="btn btn-block btn-primary bg-bprimary text-light">
+                                    Submit Word
+                                </button>
+                            </p>
+                            <p class="text-right text-lg-right mt-md-4">
+                                <a href="?wordgame=yes"
+                                   class="btn btn-light mr-4 mr-md-0">
+                                    Generate New Game
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- high_score_table -->
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
