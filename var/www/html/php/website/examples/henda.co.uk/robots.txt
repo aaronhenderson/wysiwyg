@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /*newsletter_subscribe=
+Disallow: /*website_lead=
